@@ -13,3 +13,20 @@ function arrayToList(array) {
   }
   return list;
 }
+
+function popList(list) {
+  newList = list.rest;
+  return newList;
+}
+
+function listToArray(list) {
+  let newList = list;
+  let array = [];
+  while(newList.rest != null) {
+    array.push(newList.value);
+    newList = popList(newList);
+  }
+  array.push(newList.value);
+
+  return array;
+}
