@@ -19,7 +19,7 @@ function prepend(element, list) {
 // List to array
 
 function popList(list) {
-  newList = list.rest;
+  let newList = list.rest;
   return newList;
 }
 
@@ -33,4 +33,18 @@ function listToArray(list) {
   array.push(newList.value);
 
   return array;
+}
+
+// TODO: make nth recursive
+
+function nth(list, number = 0) {
+  let newList = list;
+  number = Math.abs(number);
+  let count = 0;
+  while(count <= number) {
+    if(count == number) return newList.value
+    newList = popList(newList);
+    if (newList === null) return undefined;
+    count++;
+  }
 }
