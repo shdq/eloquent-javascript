@@ -35,16 +35,17 @@ function listToArray(list) {
   return array;
 }
 
-// TODO: make nth recursive
+// Recursive nth function that return N-th element of a list.
 
-function nth(list, number = 0) {
-  let newList = list;
+function nth(list, number = 0, count = 0) {
+  let lst = list;
   number = Math.abs(number);
-  let count = 0;
-  while(count <= number) {
-    if(count == number) return newList.value
-    newList = popList(newList);
-    if (newList === null) return undefined;
-    count++;
+
+  if(number == count) {
+    return lst.value;
   }
+
+  if (lst === null) return undefined;
+  lst = lst.rest;
+  return nth(lst, number, ++count);
 }
