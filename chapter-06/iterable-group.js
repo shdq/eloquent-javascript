@@ -7,7 +7,7 @@ class GroupIterator {
   }
 
   next() {
-    if(this.index === this.group.values.length) return { done: true };
+    if (this.index === this.group.values.length) return { done: true };
     const value = this.group.values[this.index];
     this.index++;
     return { value, done: false };
