@@ -1,6 +1,6 @@
 class Group {
   constructor() {
-    this.values = new Array;
+    this.values = new Array();
   }
 
   has(value) {
@@ -9,19 +9,19 @@ class Group {
   }
 
   add(value) {
-    if(!this.has(value)) this.values.push(value);
+    if (!this.has(value)) this.values.push(value);
   }
 
   delete(value) {
     const index = this.values.indexOf(value);
-    if(index === -1) {
+    if (index === -1) {
       return;
     }
     this.values.splice(index, 1);
   }
 
   static from(array) {
-    let group = new Group;
+    let group = new Group();
     array.forEach(element => {
       group.add(element);
     });

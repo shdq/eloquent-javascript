@@ -1,7 +1,7 @@
 function every(array, test) {
   let bool = true;
   array.forEach(element => {
-    if(!test(element)) {
+    if (!test(element)) {
       bool = false;
       return;
     }

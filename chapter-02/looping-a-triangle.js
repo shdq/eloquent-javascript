@@ -1,3 +1,3 @@
-for(let triangle = '#'; triangle.length <= 7; triangle += '#') {
+for (let triangle = "#"; triangle.length <= 7; triangle += "#") {
   console.log(triangle);
 }

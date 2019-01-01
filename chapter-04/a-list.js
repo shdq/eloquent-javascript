@@ -2,7 +2,7 @@
 
 function arrayToList(array) {
   let list = {};
-  for(let i = array.length - 1; i >= 0; i--) {
+  for (let i = array.length - 1; i >= 0; i--) {
     list = prepend(array[i], list);
   }
   return list;
@@ -12,7 +12,7 @@ function prepend(element, list) {
   let newList = {
     value: element,
     rest: list.rest === undefined ? null : list
-  }
+  };
   return newList;
 }
 
@@ -26,7 +26,7 @@ function popList(list) {
 function listToArray(list) {
   let newList = list;
   let array = [];
-  while(newList.rest != null) {
+  while (newList.rest != null) {
     array.push(newList.value);
     newList = popList(newList);
   }
@@ -41,7 +41,7 @@ function nth(list, number = 0, count = 0) {
   let lst = list;
   number = Math.abs(number);
 
-  if(number == count) {
+  if (number == count) {
     return lst.value;
   }
 

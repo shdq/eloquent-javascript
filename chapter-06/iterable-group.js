@@ -1,4 +1,4 @@
-const Group = require('./groups');
+const Group = require("./groups");
 
 class GroupIterator {
   constructor(group) {
@@ -15,8 +15,8 @@ class GroupIterator {
 }
 
 Group.prototype[Symbol.iterator] = function() {
-   return new GroupIterator(this);
-}
+  return new GroupIterator(this);
+};
 
 for (let value of Group.from(["a", "b", "c"])) {
   console.log(value);

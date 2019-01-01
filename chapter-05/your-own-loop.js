@@ -1,5 +1,5 @@
 function loop(value, testFunc, updateFunc, bodyFunc) {
-  while(testFunc(value)) {
+  while (testFunc(value)) {
     bodyFunc(value);
     value = updateFunc(value);
   }

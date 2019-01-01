@@ -1,7 +1,7 @@
-let map = {one: true, two: true, hasOwnProperty: true};
+let map = { one: true, two: true, hasOwnProperty: true };
 
 // Option one
-console.log({}.hasOwnProperty.call(map, 'one'));
+console.log({}.hasOwnProperty.call(map, "one"));
 // Option two
-console.log(Object.prototype.hasOwnProperty.call(map, 'one'));
+console.log(Object.prototype.hasOwnProperty.call(map, "one"));
 // → true
