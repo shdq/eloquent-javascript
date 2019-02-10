@@ -10,11 +10,7 @@ function primitiveMultiply(a, b) {
 
 function reliableMultiply(a, b) {
   try {
-    let result = primitiveMultiply(a, b);
-    if (Object.prototype.toString.call(result) === "[Object Error]") {
-      result = primitiveMultiply(a, b);
-    }
-    return result;
+    return primitiveMultiply(a, b);
   } catch (e) {
     return reliableMultiply(a, b);
   }
