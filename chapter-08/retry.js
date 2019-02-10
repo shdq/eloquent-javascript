@@ -9,7 +9,15 @@ function primitiveMultiply(a, b) {
 }
 
 function reliableMultiply(a, b) {
-  // Your code here.
+  try {
+    let result = primitiveMultiply(a, b);
+    if (Object.prototype.toString.call(result) === "[Object Error]") {
+      result = primitiveMultiply(a, b);
+    }
+    return result;
+  } catch (e) {
+    return reliableMultiply(a, b);
+  }
 }
 
 console.log(reliableMultiply(8, 8));
