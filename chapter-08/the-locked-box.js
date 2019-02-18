@@ -14,7 +14,15 @@ const box = {
 };
 
 function withBoxUnlocked(body) {
-  // Your code here.
+  if (box.locked) {
+    box.unlock();
+    try {
+      return body();
+    } finally {
+      box.lock();
+    }
+  }
+  return body();
 }
 
 withBoxUnlocked(function() {
