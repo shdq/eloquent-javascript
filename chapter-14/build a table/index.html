@@ -1,0 +1,44 @@
+<h1>Mountains</h1>
+
+<div id="mountains"></div>
+
+<script>
+  const MOUNTAINS = [
+    {name: "Kilimanjaro", height: 5895, place: "Tanzania"},
+    {name: "Everest", height: 8848, place: "Nepal"},
+    {name: "Mount Fuji", height: 3776, place: "Japan"},
+    {name: "Vaalserberg", height: 323, place: "Netherlands"},
+    {name: "Denali", height: 6168, place: "United States"},
+    {name: "Popocatepetl", height: 5465, place: "Mexico"},
+    {name: "Mont Blanc", height: 4808, place: "Italy/France"}
+  ];
+
+  const root = document.getElementById("mountains");
+  console.log(root);
+  const table = document.createElement("table");
+  table.setAttribute('border', 1);
+
+  let header = false;
+  MOUNTAINS.forEach(obj => {
+    if (!header) {
+      const row = document.createElement("tr");
+      Object.keys(obj).forEach(key => {
+        const th = document.createElement("th");
+        th.innerText = key;
+        row.appendChild(th);
+      });
+      table.appendChild(row);
+      header = true;
+    }
+    const row = document.createElement("tr");
+    for (let prop in obj) {
+      const td = document.createElement("td");
+      td.innerText = obj[prop];
+      if (prop === "height") td.style.textAlign = "right";
+      row.appendChild(td);
+    }
+    table.appendChild(row);
+  });
+  root.appendChild(table);
+
+</script>
