@@ -4,13 +4,37 @@
     <style>
       body {
         display: flex;
-        align-items: center;
         justify-content: center;
+        align-items: center;
+      }
+      div {
+        border: 1px solid orange;
+        padding: 10px;
+        animation: spin 5s linear infinite;
+      }
+      @keyframes spin {
+        from {
+          transform:rotate(0deg);
+        }
+        to {
+          transform:rotate(360deg);
+        }
       }
     </style>
   </head>
   <body>
-    <p class="balloon">🎈</p>
+    <div id="1">
+      <div id="2">
+        <div id="3"></div>
+      </div>
+    </div>
+    <!-- <p class="balloon">🎈</p> -->
   </body>
-  <script src="balloon.js"></script>
+  <!-- <script src="balloon.js"></script> -->
+  <script>
+    const block = document.getElementById("1");
+    const block2 = document.getElementById("2");
+    block.addEventListener('click', e => console.log(e.target.getAttribute('id')));
+    // block2.addEventListener('click', function(e) { console.log('block2', e.target.getAttribute('id'))}, true);
+  </script>
 </html>
